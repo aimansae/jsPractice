@@ -359,3 +359,514 @@ let sum = reviews
 let average = sum / reviews.length;
 
 console.log(average);
+// 25. Create an array from r strings and 'Jupiter ' at the end and 'Sun' at the start.
+// Remove the last 2strings, and then the first two
+
+let planets = ["Mercury", "Venus", "Earth", "Mars"];
+
+// Add Jupiter at the end
+
+planets.push("Jupiter");
+console.log(planets);
+
+// Add Sun at the start
+planets.unshift("Sun");
+console.log(planets);
+
+// Remove the 2 last strings
+planets.splice(-2, 2);
+console.log("Remove 2 last items", planets);
+// Remove the first 2 strings
+planets.splice(0, 2);
+console.log("Remove first 2 items", planets);
+// 26. Multiply array numbers by 5
+let multiple = 5;
+const arr3 = [10, 11, 12, 13, 14, 15];
+
+for (let n of arr3) {
+  const result = n * multiple;
+  console.log(`${n}*${multiple} = ${result}`);
+}
+
+//27. print in each loop what is on the Index of your string
+
+let greeting = "Hello, nice to meet you!";
+let index = 0;
+for (let i = 0; i <= greeting.length; i++) {
+  index++;
+  console.log(index, greeting[i]);
+}
+//28. calculate average from an array of gradeswithout reduce
+
+let grade = [55, 63, 82, 98, 91, 43];
+let total = 0;
+let totalGrades = grade.forEach((g) => {
+  total += g;
+});
+
+let gradeAverage = total / grade.length;
+console.log("Total is:", total, "Average is:", average);
+
+// console.log("total:", totalGrades);
+
+//29.  You have an array of user objects.
+//You need to filter out the users who are inactive.
+// Print the names of the Active users
+const userStatus = [
+  { name: "Jack", isActive: true },
+  { name: "Mara", isActive: false },
+  { name: "Luke", isActive: true },
+  { name: "Mike", isActive: false },
+];
+
+const activeUsers = userStatus
+  .filter((item) => item.isActive)
+  .map((u) => u.name);
+console.log(activeUsers);
+
+//30. You have an array of products, each with a price and quantity property.
+//Calculate the total value of the inventory.
+
+const myProducts = [
+  { name: "A", price: 500, quantity: 12 },
+  { name: "B", price: 100, quantity: 12 },
+  { name: "C", price: 330, quantity: 99 },
+  { name: "D", price: 900, quantity: 750 },
+  { name: "E", price: 70, quantity: 650 },
+];
+// let totalInventory = 0;
+// myProducts.forEach((product) => {
+//   totalInventory += product.price * product.quantity;
+// });
+// console.log("Total is $:", totalInventory);
+
+// With for loop
+let inventoryT = 0;
+for (let i = 0; i < myProducts.length; i++) {
+  let singleProduct = myProducts[i];
+  inventoryT += singleProduct.price * singleProduct.quantity;
+}
+console.log(inventoryT);
+
+//31. You have an array of strings representing different items sold in a store.
+//Find the item that appears most frequently in the array.
+let items = [
+  "apple",
+  "banana",
+  "orange",
+  "apple",
+  "banana",
+  "apple",
+  "kiwi",
+  "orange",
+  "banana",
+  "apple",
+];
+
+const countItems = {};
+items.forEach((i) => {
+  console.log(i);
+  countItems[i] = (countItems[i] || 0) + 1;
+});
+console.log(countItems);
+
+let mostFrequentItem = null;
+let highestCount = 0;
+for (let item in countItems) {
+  if (countItems[item] > highestCount) {
+    highestCount = countItems[item];
+    mostFrequentItem = item;
+  }
+}
+console.log(highestCount);
+// 32. You have two arrays of employee objects.
+// One array contains the id and name,
+// and the other array contains the id and department.
+// Merge these arrays based on the id to create a new array with id, name, and department.
+const employees = [
+  {
+    id: 1,
+    name: "Luke",
+  },
+  {
+    id: 2,
+    name: "Jack",
+  },
+  {
+    id: 3,
+    name: "Mark",
+  },
+];
+const department = [
+  {
+    id: 1,
+    department: "Finance",
+  },
+  {
+    id: 2,
+    department: "Ops",
+  },
+  {
+    id: 3,
+    department: "It",
+  },
+];
+
+const mergedData = employees.map((employee) => {
+  let depId = department.find((dep) => dep.id === employee.id);
+  return {
+    name: employee.name,
+    id: employee.id,
+    department: depId ? depId.department : null,
+  };
+});
+
+console.log(mergedData);
+
+//33. : You have an array of objects representing employees,
+// each with a firstName and lastName.
+//Create a new array containing the email addresses in the format firstname.lastname@company.com.
+const empData = [
+  {
+    firstName: "Sara",
+    lastName: "Smith",
+  },
+  {
+    firstName: "Jack",
+    lastName: "Jones",
+  },
+
+  {
+    firstName: "Jane",
+    lastName: "White",
+  },
+];
+
+let domain = "@company.com";
+const emailFromFullName = empData.map((emp) => {
+  let email = `${emp.firstName.toLowerCase()}${emp.lastName.toLowerCase()}${domain}`;
+  return email;
+});
+
+console.log(emailFromFullName);
+
+//34. Scenario: You have an array of products, each with a name and price.
+// Remove all products below a certain threshold.
+let limit = 50;
+const cart = [
+  { name: "Laptop", price: 1000 },
+  { name: "Mouse", price: 25 },
+  { name: "Keyboard", price: 75 },
+  { name: "Monitor", price: 150 },
+  { name: "USB Cable", price: 10 },
+];
+let filteredCart = cart
+  .filter((product) => {
+    return product.price >= limit;
+  })
+  .map((p) => {
+    return {
+      item: p.name,
+    };
+  });
+console.log(filteredCart);
+
+//35. You have an array of employees, each with a name and hireDate.
+//Sort the employees by their hire date in ascending order.
+const employeeList = [
+  { name: "Jane", hireDate: "22-11-1999" },
+  { name: "Sara", hireDate: "02-05-2022" },
+  { name: "Jack", hireDate: "12-12-2000" },
+  { name: "jules", hireDate: "02-05-2003" },
+];
+const sortedByDate = employeeList.sort(
+  (a, b) => new Date(a.hireDate) - new Date(b.hireDate)
+);
+
+console.log(sortedByDate);
+
+//36. You have an array of integers.Find the biggest number and display it.
+let num = [100, 4, 200, 1, 3, 2];
+
+let sortedNum = num.sort((a, b) => b - a);
+console.log(sortedNum[0]);
+
+//37. You have an array of articles, each with a title and views property.
+//Find the top N most viewed articles.
+
+const articles = [
+  { title: "A", views: 300 },
+  { title: "B", views: 400 },
+  { title: "C", views: 320 },
+  { title: "D", views: 50 },
+  { title: "E", views: 700 },
+];
+const sortedArticles = articles.sort((a, b) => b.views - a.views);
+console.log(sortedArticles);
+const topArticles = sortedArticles.slice(0, 2);
+console.log(topArticles);
+
+//38.  You have an array of orders, each with a status property (e.g., "pending", "shipped", "delivered").
+// Filter out orders that are "shipped".
+
+const foodOrders = [
+  {
+    item: "Pizza",
+    status: "delivered",
+  },
+  {
+    item: "Pasta",
+    status: "delivered",
+  },
+  {
+    item: "Sushi",
+    status: "shipped",
+  },
+  {
+    item: "Kebab",
+    status: "delivered",
+  },
+  {
+    item: "Chicken",
+    status: "shipped",
+  },
+  {
+    item: "Dish",
+    status: "Pending",
+  },
+];
+const findShipped = foodOrders.filter((order) => order.status === "shipped");
+console.log(findShipped);
+
+// 39.You have an array of sales transactions, each with a sellerId and amount property.
+//Calculate the total earnings for each seller.
+let salesBySeller = [
+  { sellerId: "seller1", amount: 200 },
+  { sellerId: "seller2", amount: 150 },
+  { sellerId: "seller1", amount: 300 },
+  { sellerId: "seller3", amount: 400 },
+  { sellerId: "seller2", amount: 100 },
+  { sellerId: "seller1", amount: 150 },
+];
+
+let earning = {};
+salesBySeller.forEach((transaction) => {
+  let sellerId = transaction.sellerId;
+  let amount = transaction.amount;
+  if (earning[sellerId]) {
+    earning[sellerId] += amount;
+  } else {
+    earning[sellerId] = amount;
+  }
+});
+
+console.log(earning);
+
+// 40.You have an array of purchase records, each with a userId and purchaseId.
+//Identify users who have made more than one purchase.
+let purchases = [
+  { userId: "user1", purchaseId: "p1" },
+  { userId: "user2", purchaseId: "p2" },
+  { userId: "user1", purchaseId: "p3" },
+  { userId: "user3", purchaseId: "p4" },
+  { userId: "user2", purchaseId: "p5" },
+  { userId: "user1", purchaseId: "p6" },
+];
+
+let purchaseCount = {};
+purchases.forEach((purchase) => {
+  let userId = purchase.userId;
+  if (purchaseCount[userId]) {
+    purchaseCount[userId]++;
+  } else purchaseCount[userId] = 1;
+});
+
+console.log("Purchases", purchaseCount);
+let usersWithMultiplePurchases = Object.keys(purchaseCount).filter(
+  (userId) => purchaseCount[userId] > 1
+);
+console.log(usersWithMultiplePurchases);
+
+//41. You have two arrays of product IDs.
+//Find the product IDs that appear in both arrays.
+
+let array1 = [101, 102, 103, 104, 105];
+let array2 = [103, 104, 106, 107];
+
+let commonIds = array1.filter((id) => array2.includes(id));
+console.log(commonIds);
+
+//42.Flatten a nested array and remove duplicates
+
+let nestedArr = [
+  [1, 2, 3],
+  [4, 5, 2],
+  [6, [7, 8]],
+  [1, 9, [10, 10]],
+];
+let flat = nestedArr.flat(Infinity);
+console.log(flat);
+let removeDuplicates = flat.filter((n, index) => flat.indexOf(n) === index);
+console.log("remove duplicates wit Set", removeDuplicates);
+
+// or with Set
+let flatWithSet = [...new Set(flat)];
+console.log("remove duplicates wit Set", flatWithSet);
+
+//43.Create an array, based on user who have the full information.
+let users1 = [
+  { name: "Alice", email: "alice@example.com", phone: "123-456-7890" },
+  { name: "Bob", email: "", phone: "987-654-3210" },
+  { name: "Charlie", email: "charlie@example.com", phone: "" },
+  { name: "David", email: "david@example.com", phone: "555-555-5555" },
+  { name: "Eve", email: null, phone: "222-333-4444" },
+  { name: "Frank", email: "frank@example.com", phone: null },
+];
+
+let filteredUsers1 = users1.filter((u) => u.phone !== "" && u.email !== "");
+console.log(filteredUsers1);
+//44. You have an array of user activities, each with userId, activityType, and timestamp.
+// Create a summary that counts the number of each activity type per user.
+let userActivities = [
+  { id: "Alice", activityType: "cooking", time: "14:00" },
+  { id: "Bob", activityType: "running", time: "12:00" },
+  { id: "Charlie", activityType: "eating", time: "11:00" },
+  { id: "David", activityType: "reading", time: "10:00" },
+  { id: "Bob", activityType: "eating", time: "11:00" },
+  { id: "Alice", activityType: "reading", time: "10:00" },
+];
+let totalActivities = {};
+let summary = userActivities.forEach((user) => {
+  let userName = user.id;
+
+  if (totalActivities[userName]) {
+    totalActivities[userName]++;
+  } else {
+    totalActivities[userName] = 1;
+  }
+});
+
+console.log(totalActivities);
+
+//45.  You have an array of orders, each with a deliveryDate.
+//Filter out orders that were delivered within the last 7 days.
+
+let orders5 = [
+  { id: 1, deliveryDate: "2024-08-15" },
+  { id: 2, deliveryDate: "2024-08-10" },
+  { id: 3, deliveryDate: "2024-08-16" },
+  { id: 4, deliveryDate: "2024-08-12" },
+];
+
+let today = new Date();
+console.log(today);
+let sevenDaysAgo = new Date();
+sevenDaysAgo.setDate(today.getDate() - 7);
+
+let recentOrders = orders5.filter((order) => {
+  let deliveryDate = new Date(order.deliveryDate);
+  return deliveryDate >= sevenDaysAgo && deliveryDate <= today;
+});
+console.log(recentOrders);
+
+//46.  You have an array of sales records, each with a date and amount.
+//Generate a report that summarizes total sales for each month.
+
+let salesRecords = [
+  { date: "2024-01-15", amount: 200 },
+  { date: "2024-01-22", amount: 150 },
+  { date: "2024-02-05", amount: 300 },
+  { date: "2024-02-25", amount: 100 },
+  { date: "2024-03-10", amount: 400 },
+  { date: "2024-03-15", amount: 200 },
+];
+
+let salesByMonth = {};
+salesRecords.forEach((record) => {
+  let date = new Date(record.date);
+  console.log(date);
+  let year = date.getFullYear();
+  console.log(year);
+  let month = String(date.getMonth() + 1).padStart(2, "0");
+  let key = `${year}-${month}`;
+
+  if (!salesByMonth[key]) {
+    salesByMonth[key] = 0;
+  }
+  salesByMonth[key] += record.amount;
+});
+
+console.log(salesByMonth);
+
+//47.You have an array of songs objects, each with title, author.
+//Extract a list of all songs by a specific artist.
+
+let songs = [
+  { song: "A", artist: "Mark" },
+  { song: "B", artist: "Mark" },
+  { song: "C", artist: "Phil" },
+  { song: "D", artist: "Mark" },
+  { song: "E", artist: "Mark" },
+  { song: "E", artist: "Stephan" },
+];
+
+const songsByMark = songs.filter((song) => song.artist === "Mark");
+console.log(songsByMark);
+
+//48. You have an array of employee objects,
+//each with a name and yearsOfExperience.
+//Categorize employees into "Junior", "Mid-Level", and "Senior" based on their years of experience.
+let employees4 = [
+  { name: "Alice", yearsOfExperience: 2 },
+  { name: "Bob", yearsOfExperience: 5 },
+  { name: "Charlie", yearsOfExperience: 8 },
+  { name: "David", yearsOfExperience: 12 },
+  { name: "Eve", yearsOfExperience: 1 },
+];
+
+const threshold = {
+  junior: 3,
+  midLevel: 7,
+};
+
+const categories = {
+  junior: [],
+  mid: [],
+  senior: [],
+};
+
+employees4.forEach((employee) => {
+  if (employee.yearsOfExperience < threshold.junior) {
+    categories.junior.push(employee);
+  } else if (employee.yearsOfExperience <= threshold.midLevel) {
+    categories.mid.push(employee);
+  } else categories.senior.push(employee);
+});
+console.log(categories);
+// 49. You have an array of invoice objects, each with a dueDate and amount.
+//Identify invoices that are overdue (i.e., the due date is before today).
+let invoices = [
+  { invoiceId: 1, dueDate: "2024-08-20", amount: 500 },
+  { invoiceId: 2, dueDate: "2024-08-15", amount: 300 },
+  { invoiceId: 3, dueDate: "2024-08-25", amount: 700 },
+  { invoiceId: 4, dueDate: "2024-07-30", amount: 200 },
+];
+let todayDate = new Date();
+let overDueInvoices = invoices.filter((invoice) => {
+  let dueDate = new Date(invoice.dueDate);
+  return dueDate < today;
+});
+
+console.log(overDueInvoices);
+//50. You have an array of product objects, each with a name, price, and inStock property.
+//Create a list of products that are currently in stock.
+let products2 = [
+  { name: "Laptop", price: 1200, inStock: true },
+  { name: "Smartphone", price: 800, inStock: false },
+  { name: "Tablet", price: 600, inStock: true },
+  { name: "Monitor", price: 300, inStock: false },
+  { name: "Keyboard", price: 100, inStock: true },
+];
+
+let inStockProducts = products2.filter((p) => p.inStock);
+console.log(inStockProducts);
