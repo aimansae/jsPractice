@@ -1,6 +1,6 @@
-//1. Write a function that takes an array of numbers and
-//returns a new array with the numbers in reverse order.
-
+/*1. Write a function that takes an array of numbers and
+returns a new array with the numbers in reverse order.
+*/
 const reverseArray = (arr) => {
   const newArray = arr.reverse();
   return newArray;
@@ -8,9 +8,10 @@ const reverseArray = (arr) => {
 const myArray = [1, , 5, 2, 2, 3, 4, 5];
 console.log(reverseArray(myArray));
 
-//2. Write a function that takes an array of strings and
-//returns an object where the keys are the strings and
-//the values are the number of times each string appears in the array.
+/*2. Write a function that takes an array of strings and
+returns an object where the keys are the strings and
+the values are the number of times each string appears in the array.*/
+
 const calculateOccurrences = (arr) => {
   let occurrences = {};
   arr.forEach((item) => {
@@ -21,9 +22,9 @@ const calculateOccurrences = (arr) => {
 const arrayOfStrings = ["a", "b", "c", "d", "d"];
 console.log(calculateOccurrences(arrayOfStrings));
 
-//3. Given an array of numbers, find the maximum and minimum values,
-//then create a new array that contains only the unique
-//numbers in ascending order.
+/*3. Given an array of numbers, find the maximum and minimum values,
+then create a new array that contains only the unique
+numbers in ascending order.*/
 
 const numbers = [5, 8, 1, 2, 3, 4, 5];
 const maxValue = Math.max(...numbers);
@@ -73,9 +74,9 @@ const arrayOfNumbers = [1, 2, 3, 4];
 const multipedArray = arrayOfNumbers.reduce((acc, value) => acc * value);
 console.log(multipedArray);
 
-// 7. Calculate the total worth of each product an array of
-//objects displaying it alongside the product name
-
+/* 7. Calculate the total worth of each product an array of
+objects displaying it alongside the product name
+*/
 const store = [
   { name: " laptop", count: 25, price: 1000 },
   { name: "hairDryer", count: 10, price: 50 },
@@ -138,8 +139,8 @@ const newArray = duplicatedArray.filter((item, index, arr) => {
 });
 console.log(newArray);
 
-//11.  Create an object representing a book with properties like title, author, and year. Write
-//a function to print a formatted string containing this information.
+/*11.  Create an object representing a book with properties like title, author, and year. Write
+a function to print a formatted string containing this information.*/
 let book = {
   title: "To Kill a Mockingbird",
   author: "Harper Lee",
@@ -152,8 +153,8 @@ const printBookInfo = (book) => {
 };
 printBookInfo(book);
 
-// 12. Task: Create a Map where the keys are student names and the values are their grades.
-//Write a function that returns the average grade of all students.
+/*12. Task: Create a Map where the keys are student names and the values are their grades.
+Write a function that returns the average grade of all students.*/
 
 const grades = new Map([
   ["Jack", 85],
@@ -175,8 +176,8 @@ function calculateAverage(grades) {
 }
 console.log(calculateAverage(grades));
 
-//13. Create a Set of colors. Add a new color to the set,
-//then check if a particular color exists in the set and remove a color.
+/*13. Create a Set of colors. Add a new color to the set,
+then check if a particular color exists in the set and remove a color.*/
 
 const colors = new Set(["red", "blue", "green"]);
 colors.add("yellow");
@@ -185,8 +186,8 @@ console.log(colors.has("red"));
 colors.delete("blue");
 console.log(colors);
 
-// 15. Given a nested object representing a company’s employees,
-//write a function to get the name of an employee given their ID.
+/*14. Given a nested object representing a company’s employees,
+write a function to get the name of an employee given their ID.*/
 
 const company = {
   employees: {
@@ -203,7 +204,8 @@ const getEmployeeName = (company, id) => {
 };
 console.log(getEmployeeName(company, 2));
 
-// 15. Write a function to flatten a nested array into a single-level array.
+/*15. Write a function to flatten a nested array into a
+ single-level array.*/
 let nestedArray = [1, [2, [3, 4], 5], 6, [7, 8]];
 
 let flattenedArray = nestedArray.flat(1);
@@ -231,8 +233,9 @@ const filtered = array.filter((item, index) => {
 
 console.log(filtered);
 
-// 18. You have an array of customer orders with their amounts and dates.
-//You need to filter out orders above a certain amount and sort them by date.
+/*18. You have an array of customer orders with their amounts and dates.
+You need to filter out orders above a certain amount and sort them by date.
+*/
 
 let orders = [
   { id: 1, amount: 250, date: "2024-08-15" },
@@ -248,8 +251,9 @@ let filteredOrders = orders.filter(
 filteredOrders.sort((a, b) => new Date(a.date) - new Date(b.date));
 console.log(filteredOrders);
 
-// 19. You have an array of blog posts,
-//each with an array of tags. Extract all unique tags from all posts.
+/*19. You have an array of blog posts,
+each with an array of tags. Extract all unique tags from all posts.
+*/
 
 let blog = [
   { id: 1, tags: ["JavaScript", "Web Development"] },
@@ -264,8 +268,10 @@ let filterArray = tagsInOneArray.filter(
 );
 console.log(filterArray);
 
-//20. You have an array of sales records, each with a product name and amount.
-//Calculate the total sales amount for each product.
+/*20. You have an array of sales records, each with a product name and amount.
+Calculate the total sales amount for each product.
+*/
+
 let sales = [
   { product: "Laptop", amount: 1000 },
   { product: "Mouse", amount: 50 },
@@ -284,8 +290,10 @@ sales.forEach((sale) => {
   }
 });
 console.log(totalSales);
-//21. You have an array of user objects, each with a first name and last name.
-//Transform this data to create full names.
+/*21. You have an array of user objects, each with a first name and last name.
+Transform this data to create full names.
+*/
+
 let users = [
   { firstName: "john", lastName: "Doe" },
   { firstName: "Jane", lastName: "Smith" },
@@ -297,8 +305,10 @@ const fullName = users.map((user) => {
 });
 console.log(fullName);
 
-//22. You have an array of orders with customer IDs.
-//Group these orders by customer
+/*22. You have an array of orders with customer IDs.
+Group these orders by customer
+*/
+
 let customerOrders = [
   { id: 1, customerId: "A", amount: 250 },
   { id: 2, customerId: "B", amount: 50 },
@@ -316,8 +326,10 @@ customerOrders.forEach((order) => {
   }
 });
 console.log(orderByCustomer);
-//23.You have an array of students with their scores.
-//Find the top 3 students with the highest scores.
+/*23.You have an array of students with their scores.
+Find the top 3 students with the highest scores.
+*/
+
 let students = [
   { name: "Alice", score: 85 },
   { name: "Bob", score: 92 },
@@ -330,8 +342,10 @@ console.log(sortedScore);
 const topThreeStudents = sortedScore.slice(0, 3);
 console.log("Top students:", topThreeStudents);
 
-//24.You have two arrays of event dates
-//Merge them into a single array and sort the dates.
+/*24.You have two arrays of event dates
+Merge them into a single array and sort the dates.
+*/
+
 let workEvents = ["2024-08-15", "2024-08-20", "2024-08-25"];
 let personalEvents = ["2024-08-16", "2024-08-22", "2024-08-18"];
 
@@ -343,8 +357,10 @@ const sortedDates = mergedArray.sort(
 );
 console.log(sortedDates);
 
-//25. You have an array of product reviews, each with a rating.
-//Calculate the average rating.
+/*25. You have an array of product reviews, each with a rating.
+Calculate the average rating.
+*/
+
 let reviews = [
   { productId: "A", rating: 4 },
   { productId: "B", rating: 5 },
@@ -359,8 +375,9 @@ let sum = reviews
 let average = sum / reviews.length;
 
 console.log(average);
-// 25. Create an array from r strings and 'Jupiter ' at the end and 'Sun' at the start.
-// Remove the last 2strings, and then the first two
+/*26. Create an array from r strings and 'Jupiter ' at the end and 'Sun' at the start.
+Remove the last 2strings, and then the first two
+*/
 
 let planets = ["Mercury", "Venus", "Earth", "Mars"];
 
@@ -379,7 +396,8 @@ console.log("Remove 2 last items", planets);
 // Remove the first 2 strings
 planets.splice(0, 2);
 console.log("Remove first 2 items", planets);
-// 26. Multiply array numbers by 5
+//27. Multiply array numbers by 5
+
 let multiple = 5;
 const arr3 = [10, 11, 12, 13, 14, 15];
 
@@ -388,7 +406,7 @@ for (let n of arr3) {
   console.log(`${n}*${multiple} = ${result}`);
 }
 
-//27. print in each loop what is on the Index of your string
+//28. print in each loop what is on the Index of your string
 
 let greeting = "Hello, nice to meet you!";
 let index = 0;
@@ -396,7 +414,7 @@ for (let i = 0; i <= greeting.length; i++) {
   index++;
   console.log(index, greeting[i]);
 }
-//28. calculate average from an array of gradeswithout reduce
+//29. calculate average from an array of gradeswithout reduce
 
 let grade = [55, 63, 82, 98, 91, 43];
 let total = 0;
@@ -409,9 +427,11 @@ console.log("Total is:", total, "Average is:", average);
 
 // console.log("total:", totalGrades);
 
-//29.  You have an array of user objects.
-//You need to filter out the users who are inactive.
-// Print the names of the Active users
+/*30.  You have an array of user objects.
+You need to filter out the users who are inactive.
+Print the names of the Active users
+*/
+
 const userStatus = [
   { name: "Jack", isActive: true },
   { name: "Mara", isActive: false },
@@ -424,9 +444,9 @@ const activeUsers = userStatus
   .map((u) => u.name);
 console.log(activeUsers);
 
-//30. You have an array of products, each with a price and quantity property.
-//Calculate the total value of the inventory.
-
+/*31. You have an array of products, each with a price and quantity property.
+Calculate the total value of the inventory.
+*/
 const myProducts = [
   { name: "A", price: 500, quantity: 12 },
   { name: "B", price: 100, quantity: 12 },
@@ -448,8 +468,10 @@ for (let i = 0; i < myProducts.length; i++) {
 }
 console.log(inventoryT);
 
-//31. You have an array of strings representing different items sold in a store.
-//Find the item that appears most frequently in the array.
+/*32. You have an array of strings representing different items sold in a store.
+Find the item that appears most frequently in the array.
+*/
+
 let items = [
   "apple",
   "banana",
@@ -479,10 +501,12 @@ for (let item in countItems) {
   }
 }
 console.log(highestCount);
-// 32. You have two arrays of employee objects.
-// One array contains the id and name,
-// and the other array contains the id and department.
-// Merge these arrays based on the id to create a new array with id, name, and department.
+/*33. You have two arrays of employee objects.
+One array contains the id and name,
+and the other array contains the id and department.
+Merge these arrays based on the id to create a new array with id, name, and department.
+*/
+
 const employees = [
   {
     id: 1,
@@ -523,9 +547,11 @@ const mergedData = employees.map((employee) => {
 
 console.log(mergedData);
 
-//33. : You have an array of objects representing employees,
-// each with a firstName and lastName.
-//Create a new array containing the email addresses in the format firstname.lastname@company.com.
+/*34. : You have an array of objects representing employees,
+each with a firstName and lastName.
+Create a new array containing the email addresses in the format firstname.lastname@company.com.
+*/
+
 const empData = [
   {
     firstName: "Sara",
@@ -550,8 +576,10 @@ const emailFromFullName = empData.map((emp) => {
 
 console.log(emailFromFullName);
 
-//34. Scenario: You have an array of products, each with a name and price.
-// Remove all products below a certain threshold.
+/*35. Scenario: You have an array of products, each with a name and price.
+Remove all products below a certain threshold.
+*/
+
 let limit = 50;
 const cart = [
   { name: "Laptop", price: 1000 },
@@ -571,8 +599,10 @@ let filteredCart = cart
   });
 console.log(filteredCart);
 
-//35. You have an array of employees, each with a name and hireDate.
-//Sort the employees by their hire date in ascending order.
+/*36. You have an array of employees, each with a name and hireDate.
+Sort the employees by their hire date in ascending order.
+*/
+
 const employeeList = [
   { name: "Jane", hireDate: "22-11-1999" },
   { name: "Sara", hireDate: "02-05-2022" },
@@ -585,14 +615,15 @@ const sortedByDate = employeeList.sort(
 
 console.log(sortedByDate);
 
-//36. You have an array of integers.Find the biggest number and display it.
+//37. You have an array of integers.Find the biggest number and display it.
 let num = [100, 4, 200, 1, 3, 2];
 
 let sortedNum = num.sort((a, b) => b - a);
 console.log(sortedNum[0]);
 
-//37. You have an array of articles, each with a title and views property.
-//Find the top N most viewed articles.
+/*38. You have an array of articles, each with a title and views property.
+Find the top N most viewed articles.
+*/
 
 const articles = [
   { title: "A", views: 300 },
@@ -606,8 +637,9 @@ console.log(sortedArticles);
 const topArticles = sortedArticles.slice(0, 2);
 console.log(topArticles);
 
-//38.  You have an array of orders, each with a status property (e.g., "pending", "shipped", "delivered").
-// Filter out orders that are "shipped".
+/*39.  You have an array of orders, each with a status property (e.g., "pending", "shipped", "delivered").
+Filter out orders that are "shipped".
+*/
 
 const foodOrders = [
   {
@@ -638,8 +670,10 @@ const foodOrders = [
 const findShipped = foodOrders.filter((order) => order.status === "shipped");
 console.log(findShipped);
 
-// 39.You have an array of sales transactions, each with a sellerId and amount property.
-//Calculate the total earnings for each seller.
+/*40.You have an array of sales transactions, each with a sellerId and amount property.
+Calculate the total earnings for each seller.
+*/
+
 let salesBySeller = [
   { sellerId: "seller1", amount: 200 },
   { sellerId: "seller2", amount: 150 },
@@ -662,8 +696,10 @@ salesBySeller.forEach((transaction) => {
 
 console.log(earning);
 
-// 40.You have an array of purchase records, each with a userId and purchaseId.
-//Identify users who have made more than one purchase.
+/* 41.You have an array of purchase records, each with a userId and purchaseId.
+Identify users who have made more than one purchase.
+*/
+
 let purchases = [
   { userId: "user1", purchaseId: "p1" },
   { userId: "user2", purchaseId: "p2" },
@@ -687,8 +723,7 @@ let usersWithMultiplePurchases = Object.keys(purchaseCount).filter(
 );
 console.log(usersWithMultiplePurchases);
 
-//41. You have two arrays of product IDs.
-//Find the product IDs that appear in both arrays.
+//42. You have two arrays of product IDs. Find the product IDs that appear in both arrays.
 
 let array1 = [101, 102, 103, 104, 105];
 let array2 = [103, 104, 106, 107];
@@ -696,7 +731,7 @@ let array2 = [103, 104, 106, 107];
 let commonIds = array1.filter((id) => array2.includes(id));
 console.log(commonIds);
 
-//42.Flatten a nested array and remove duplicates
+//43 .Flatten a nested array and remove duplicates
 
 let nestedArr = [
   [1, 2, 3],
@@ -713,7 +748,7 @@ console.log("remove duplicates wit Set", removeDuplicates);
 let flatWithSet = [...new Set(flat)];
 console.log("remove duplicates wit Set", flatWithSet);
 
-//43.Create an array, based on user who have the full information.
+//44.Create an array, based on user who have the full information.
 let users1 = [
   { name: "Alice", email: "alice@example.com", phone: "123-456-7890" },
   { name: "Bob", email: "", phone: "987-654-3210" },
@@ -725,8 +760,10 @@ let users1 = [
 
 let filteredUsers1 = users1.filter((u) => u.phone !== "" && u.email !== "");
 console.log(filteredUsers1);
-//44. You have an array of user activities, each with userId, activityType, and timestamp.
-// Create a summary that counts the number of each activity type per user.
+/*45. You have an array of user activities, each with userId, activityType, and timestamp.
+Create a summary that counts the number of each activity type per user.
+*/
+
 let userActivities = [
   { id: "Alice", activityType: "cooking", time: "14:00" },
   { id: "Bob", activityType: "running", time: "12:00" },
@@ -748,8 +785,9 @@ let summary = userActivities.forEach((user) => {
 
 console.log(totalActivities);
 
-//45.  You have an array of orders, each with a deliveryDate.
-//Filter out orders that were delivered within the last 7 days.
+/*46.  You have an array of orders, each with a deliveryDate.
+Filter out orders that were delivered within the last 7 days.
+*/
 
 let orders5 = [
   { id: 1, deliveryDate: "2024-08-15" },
@@ -769,8 +807,9 @@ let recentOrders = orders5.filter((order) => {
 });
 console.log(recentOrders);
 
-//46.  You have an array of sales records, each with a date and amount.
-//Generate a report that summarizes total sales for each month.
+/*47.  You have an array of sales records, each with a date and amount.
+Generate a report that summarizes total sales for each month.
+*/
 
 let salesRecords = [
   { date: "2024-01-15", amount: 200 },
@@ -798,8 +837,9 @@ salesRecords.forEach((record) => {
 
 console.log(salesByMonth);
 
-//47.You have an array of songs objects, each with title, author.
-//Extract a list of all songs by a specific artist.
+/*48.You have an array of songs objects, each with title, author.
+Extract a list of all songs by a specific artist.
+*/
 
 let songs = [
   { song: "A", artist: "Mark" },
@@ -813,9 +853,11 @@ let songs = [
 const songsByMark = songs.filter((song) => song.artist === "Mark");
 console.log(songsByMark);
 
-//48. You have an array of employee objects,
-//each with a name and yearsOfExperience.
-//Categorize employees into "Junior", "Mid-Level", and "Senior" based on their years of experience.
+/*49. You have an array of employee objects,
+each with a name and yearsOfExperience.
+Categorize employees into "Junior", "Mid-Level", and "Senior" based on their years of experience.
+*/
+
 let employees4 = [
   { name: "Alice", yearsOfExperience: 2 },
   { name: "Bob", yearsOfExperience: 5 },
@@ -843,8 +885,10 @@ employees4.forEach((employee) => {
   } else categories.senior.push(employee);
 });
 console.log(categories);
-// 49. You have an array of invoice objects, each with a dueDate and amount.
-//Identify invoices that are overdue (i.e., the due date is before today).
+/*50. You have an array of invoice objects, each with a dueDate and amount.
+Identify invoices that are overdue (i.e., the due date is before today).
+*/
+
 let invoices = [
   { invoiceId: 1, dueDate: "2024-08-20", amount: 500 },
   { invoiceId: 2, dueDate: "2024-08-15", amount: 300 },
@@ -858,8 +902,10 @@ let overDueInvoices = invoices.filter((invoice) => {
 });
 
 console.log(overDueInvoices);
-//50. You have an array of product objects, each with a name, price, and inStock property.
-//Create a list of products that are currently in stock.
+/*51. You have an array of product objects, each with a name, price, and inStock property.
+Create a list of products that are currently in stock.
+*/
+
 let products2 = [
   { name: "Laptop", price: 1200, inStock: true },
   { name: "Smartphone", price: 800, inStock: false },
