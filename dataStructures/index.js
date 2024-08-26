@@ -68,13 +68,7 @@ letters.forEach((item) => {
 });
 console.log(letters);
 
-//6. Multiply all the numbers from an array
-
-const arrayOfNumbers = [1, 2, 3, 4];
-const multipedArray = arrayOfNumbers.reduce((acc, value) => acc * value);
-console.log(multipedArray);
-
-/* 7. Calculate the total worth of each product an array of
+/*6. Calculate the total worth of each product an array of
 objects displaying it alongside the product name
 */
 const store = [
@@ -95,20 +89,20 @@ totalProductsValue.forEach((item) =>
   console.log(`${item.name}: ${item.totalValue}`)
 );
 
-//8. Convert a string of numbers, into an array
+//7. Convert a string of numbers, into an array
 
 const stringOfNumbers = ["1", "2", "3", "4"];
 const stringToArray = stringOfNumbers.map((item) => Number(item));
 console.log(stringToArray);
 
-// 9. Filter an array with only the even numbers
+//8. Filter an array with only the even numbers
 
 const numbers2 = [1, 2, 3, 4, 5, 6];
 
 const evenNumbers = numbers2.filter((num) => num % 2 === 0);
 console.log(evenNumbers);
 
-//10. Check if the person in an array of objects is > 18 years old
+//9. Check if the person in an array of objects is > 18 years old
 
 const person2 = [
   {
@@ -131,7 +125,7 @@ const person2 = [
 const isAnAdult = person2.filter((person) => person.age >= 18);
 console.log("Adults are:", isAnAdult);
 
-// 10. Remove all the duplicates from an Array
+//10. Remove all the duplicates from an Array
 
 const duplicatedArray = [1, 2, 3, 4, 5, 6, 5, 4, 3, 2, 1];
 const newArray = duplicatedArray.filter((item, index, arr) => {
@@ -290,6 +284,7 @@ sales.forEach((sale) => {
   }
 });
 console.log(totalSales);
+
 /*21. You have an array of user objects, each with a first name and last name.
 Transform this data to create full names.
 */
@@ -326,6 +321,7 @@ customerOrders.forEach((order) => {
   }
 });
 console.log(orderByCustomer);
+
 /*23.You have an array of students with their scores.
 Find the top 3 students with the highest scores.
 */
@@ -375,6 +371,7 @@ let sum = reviews
 let average = sum / reviews.length;
 
 console.log(average);
+
 /*26. Create an array from r strings and 'Jupiter ' at the end and 'Sun' at the start.
 Remove the last 2strings, and then the first two
 */
@@ -396,6 +393,7 @@ console.log("Remove 2 last items", planets);
 // Remove the first 2 strings
 planets.splice(0, 2);
 console.log("Remove first 2 items", planets);
+
 //27. Multiply array numbers by 5
 
 let multiple = 5;
@@ -424,8 +422,6 @@ let totalGrades = grade.forEach((g) => {
 
 let gradeAverage = total / grade.length;
 console.log("Total is:", total, "Average is:", average);
-
-// console.log("total:", totalGrades);
 
 /*30.  You have an array of user objects.
 You need to filter out the users who are inactive.
@@ -501,6 +497,7 @@ for (let item in countItems) {
   }
 }
 console.log(highestCount);
+
 /*33. You have two arrays of employee objects.
 One array contains the id and name,
 and the other array contains the id and department.
@@ -748,7 +745,7 @@ console.log("remove duplicates wit Set", removeDuplicates);
 let flatWithSet = [...new Set(flat)];
 console.log("remove duplicates wit Set", flatWithSet);
 
-//44.Create an array, based on user who have the full information.
+//44. Create an array, based on user who have the full information.
 let users1 = [
   { name: "Alice", email: "alice@example.com", phone: "123-456-7890" },
   { name: "Bob", email: "", phone: "987-654-3210" },
@@ -760,6 +757,7 @@ let users1 = [
 
 let filteredUsers1 = users1.filter((u) => u.phone !== "" && u.email !== "");
 console.log(filteredUsers1);
+
 /*45. You have an array of user activities, each with userId, activityType, and timestamp.
 Create a summary that counts the number of each activity type per user.
 */
@@ -837,7 +835,7 @@ salesRecords.forEach((record) => {
 
 console.log(salesByMonth);
 
-/*48.You have an array of songs objects, each with title, author.
+/*48. You have an array of songs objects, each with title, author.
 Extract a list of all songs by a specific artist.
 */
 
@@ -885,6 +883,7 @@ employees4.forEach((employee) => {
   } else categories.senior.push(employee);
 });
 console.log(categories);
+
 /*50. You have an array of invoice objects, each with a dueDate and amount.
 Identify invoices that are overdue (i.e., the due date is before today).
 */
@@ -902,6 +901,7 @@ let overDueInvoices = invoices.filter((invoice) => {
 });
 
 console.log(overDueInvoices);
+
 /*51. You have an array of product objects, each with a name, price, and inStock property.
 Create a list of products that are currently in stock.
 */
