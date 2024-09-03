@@ -4,12 +4,12 @@ const students = {
   Bob: [70, 80, 78],
 };
 
-const addGrade = (studentName, grade) => {
-  if (students[studentName]) {
-    students[studentName].push(grade);
-    console.log(`Grade ${grade} added for ${studentName}`);
+const addGrade = (key, grade) => {
+  if (students[key]) {
+    students[key].push(grade);
+    console.log(`Grade ${grade} added for ${key}`);
   } else {
-    students[studentName] = [grade];
+    students[key] = [grade];
   }
 };
 addGrade("Alice", 22);
